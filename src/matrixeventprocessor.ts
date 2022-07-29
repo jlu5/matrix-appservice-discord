@@ -278,7 +278,7 @@ export class MatrixEventProcessor {
             return;
         }
 
-        msg += " on Matrix.";
+        msg += ".";
         const channel = await this.discord.GetChannelFromRoomId(event.room_id) as Discord.TextChannel;
         await this.discord.sendAsBot(msg, channel, event);
         await this.sendReadReceipt(event);
