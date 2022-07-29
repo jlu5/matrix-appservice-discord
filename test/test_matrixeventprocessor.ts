@@ -345,7 +345,7 @@ describe("MatrixEventProcessor", () => {
                 type: "m.room.name",
             } as IMatrixEvent;
             await processor.ProcessStateEvent(event);
-            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` set the name to `Test Name` on Matrix.");
+            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` set the name to `Test Name`.");
         });
         it("Should echo topic changes", async () => {
             const {processor} =  createMatrixEventProcessor();
@@ -357,7 +357,7 @@ describe("MatrixEventProcessor", () => {
                 type: "m.room.topic",
             } as IMatrixEvent;
             await processor.ProcessStateEvent(event);
-            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` set the topic to `Test Topic` on Matrix.");
+            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` set the topic to `Test Topic`.");
         });
         it("Should echo joins", async () => {
             const {processor} =  createMatrixEventProcessor();
@@ -370,7 +370,7 @@ describe("MatrixEventProcessor", () => {
                 unsigned: {},
             } as IMatrixEvent;
             await processor.ProcessStateEvent(event);
-            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` joined the room on Matrix.");
+            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` joined the room.");
         });
         it("Should echo invites", async () => {
             const {processor} =  createMatrixEventProcessor();
@@ -384,7 +384,7 @@ describe("MatrixEventProcessor", () => {
                 unsigned: {},
             } as IMatrixEvent;
             await processor.ProcessStateEvent(event);
-            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` invited `@user2:localhost` to the room on Matrix.");
+            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` invited `@user2:localhost` to the room.");
         });
         it("Should echo kicks", async () => {
             const {processor} =  createMatrixEventProcessor();
@@ -398,7 +398,7 @@ describe("MatrixEventProcessor", () => {
                 unsigned: {},
             } as IMatrixEvent;
             await processor.ProcessStateEvent(event);
-            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` kicked `@user2:localhost` from the room on Matrix.");
+            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` kicked `@user2:localhost` from the room.");
         });
         it("Should echo leaves", async () => {
             const {processor} =  createMatrixEventProcessor();
@@ -412,7 +412,7 @@ describe("MatrixEventProcessor", () => {
                 unsigned: {},
             } as IMatrixEvent;
             await processor.ProcessStateEvent(event);
-            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` left the room on Matrix.");
+            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` left the room.");
         });
         it("Should echo bans", async () => {
             const {processor} =  createMatrixEventProcessor();
@@ -426,7 +426,7 @@ describe("MatrixEventProcessor", () => {
                 unsigned: {},
             } as IMatrixEvent;
             await processor.ProcessStateEvent(event);
-            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` banned `@user2:localhost` from the room on Matrix.");
+            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` banned `@user2:localhost` from the room.");
         });
     });
     describe("EventToEmbed", () => {
